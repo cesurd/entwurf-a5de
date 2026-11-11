@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Gutachter Zentrale Nagel – Entwurf der Startseite">
 <meta property="og:description" content="Vorschau des neuen Kopfbereichs. Nur zur Abstimmung.">
-<meta property="og:image" content="https://cesurd.github.io/entwurf-a5de/og.jpg">
+<meta property="og:image" content="https://cesurd.github.io/entwurf-a5de/og.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <script>
@@ -41,6 +41,15 @@ a{color:inherit;text-decoration:none}
 .kopf-tel{display:flex;align-items:center;gap:10px;font-family:'Montserrat',Arial,sans-serif;font-weight:700;font-size:16px;white-space:nowrap}
 .kopf-tel svg{width:18px;height:18px;color:var(--silber)}
 .kopf-m{display:none}
+.rechts{display:flex;align-items:center;gap:22px}
+.badge{display:inline-flex;align-items:center;gap:9px;height:38px;padding:0 14px 0 11px;border:1px solid #E3E7EF;border-radius:999px;background:#fff;box-shadow:0 1px 2px rgba(7,18,38,.06);font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:15px;color:var(--navy-900);white-space:nowrap}
+.badge .g{width:18px;height:18px}
+.badge .sterne{display:flex;gap:1px;color:var(--gold)}
+.badge .sterne svg{width:13px;height:13px}
+.badge-m{display:none}
+.menue-d{display:none;width:44px;height:44px;place-items:center;margin-right:-10px;color:#fff}
+.menue-d svg{width:24px;height:24px}
+html.kopf-hell .menue-d{color:var(--navy-900)}
 html.kopf-hell .kopf,html.kopf-hell .kopf-m{background:#fff;box-shadow:0 1px 0 rgba(7,18,38,.08),0 10px 30px -18px rgba(7,18,38,.5)}
 html.kopf-hell .nav,html.kopf-hell .kopf-tel,html.kopf-hell .ico{color:var(--navy-900)}
 html.kopf-hell .kopf-tel svg{color:var(--navy-700)}
@@ -115,7 +124,11 @@ html.still[data-s="1"] .punkt:nth-child(2) .medaille .icon :is(path,circle){stro
 @media (max-width:760px){
   .kopf{display:none}
   .kopf-m{display:flex;position:absolute;top:0;left:0;right:0;z-index:6;height:64px;align-items:center;justify-content:space-between;padding:0 12px 0 16px}
-  .kopf-m .logo img{height:34px}
+  .kopf-m .logo img{height:31px}
+  .rechts-m{display:flex;align-items:center}
+  .badge-m{display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 9px 0 7px;margin-right:2px;border:1px solid #E3E7EF;border-radius:999px;background:#fff;font-family:'Montserrat',Arial,sans-serif;font-weight:800;font-size:13px;color:var(--navy-900);white-space:nowrap}
+  .badge-m .g{width:14px;height:14px}
+  .badge-m .stern{width:12px;height:12px;color:var(--gold)}
   .icons{display:flex}
   .ico{width:44px;height:44px;display:grid;place-items:center;color:#fff}
   .ico svg{width:22px;height:22px}
@@ -140,6 +153,17 @@ html.still[data-s="1"] .punkt:nth-child(2) .medaille .icon :is(path,circle){stro
   .punkt h3{font-size:17px;padding-right:28px}
   .punkt p{margin-top:6px;font-size:15px}
 }
+@media (max-width:380px){
+  .kopf-m .logo img{height:27px}
+  .badge-m .stern{display:none}
+}
+@media (max-width:340px){
+  .kopf-m .logo img{height:23px}
+}
+@media (min-width:761px) and (max-width:1180px){
+  .nav{display:none}
+  .menue-d{display:grid}
+}
 </style>
 </head>
 <body>
@@ -147,17 +171,25 @@ html.still[data-s="1"] .punkt:nth-child(2) .medaille .icon :is(path,circle){stro
   <symbol id="stern" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.6l2.83 6.06 6.62.73-4.93 4.5 1.36 6.53L12 17.1l-5.88 3.32 1.36-6.53-4.93-4.5 6.62-.73z"/></symbol>
   <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
   <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></symbol>
+<symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol>
   <symbol id="menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M3.5 7h17M3.5 12h17M3.5 17h17"/></symbol>
 </svg>
 
 <header class="kopf">
   <a class="logo"><img class="hell" src="img/logo-navy-web.png" alt="Gutachter Zentrale Nagel" width="600" height="104"></a>
   <nav class="nav"><a>Leistungen</a><a>Ablauf</a><a>Über mich</a><a>Einsatzgebiete</a><a>Kontakt</a></nav>
-  <a class="kopf-tel"><svg><use href="#tel"/></svg>0151&nbsp;29682835</a>
+  <div class="rechts">
+    <a class="badge" aria-label="5,0 von 5 Sternen bei Google"><svg class="g" aria-hidden="true"><use href="#g"/></svg>5,0<span class="sterne"><svg><use href="#stern"/></svg><svg><use href="#stern"/></svg><svg><use href="#stern"/></svg><svg><use href="#stern"/></svg><svg><use href="#stern"/></svg></span></a>
+    <a class="kopf-tel"><svg><use href="#tel"/></svg>0151&nbsp;29682835</a>
+    <a class="menue-d" aria-label="Menü"><svg><use href="#menu"/></svg></a>
+  </div>
 </header>
 <header class="kopf-m">
   <a class="logo"><img class="hell" src="img/logo-navy-web.png" alt="Gutachter Zentrale Nagel" width="600" height="104"></a>
-  <div class="icons"><a class="ico" aria-label="Anrufen"><svg><use href="#tel"/></svg></a><a class="ico" aria-label="Menü"><svg><use href="#menu"/></svg></a></div>
+  <div class="rechts-m">
+    <a class="badge-m" aria-label="5,0 von 5 Sternen bei Google"><svg class="g" aria-hidden="true"><use href="#g"/></svg>5,0<svg class="stern" aria-hidden="true"><use href="#stern"/></svg></a>
+    <div class="icons"><a class="ico" aria-label="Anrufen"><svg><use href="#tel"/></svg></a><a class="ico" aria-label="Menü"><svg><use href="#menu"/></svg></a></div>
+  </div>
 </header>
 
 <section class="hero">
